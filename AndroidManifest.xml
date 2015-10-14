@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dd.medication"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 开机启动的监听权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 全屏对话框 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" >
+    </uses-permission>
+    <!-- 统计系统中APK的使用  所需权限 -->
+    <uses-permission android:name="android.permission.PACKAGEUSAGESTATS" />
+    <!-- 获取 作为手机来讲，IMEI是唯一的 所需权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- BT MAC Address string 所需权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- WLAN MAC Address string 所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.dd.medication.login.ui.GuideActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.dd.medication.login.ui.GuideViewPagerActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.login.ui.LoginActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.MedicationsMainActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.MedicationsActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.about.ui.AboutActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.setting.ui.SettingActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.timeline.ui.TimeLineActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.login.ui.RegisterActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.login.ui.SexualSelectionActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.login.ui.AgeSelectionActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.DrugUseActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.AddMedicineToastActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.plan.ui.MyPlanActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.SeachMedicineActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.MedicineDetailActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.NoFoundMedicineActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.BodyChartActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.HealthRecActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.BodyPartsActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.SymptomActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.SymptomSettingActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.medicine.ui.HealthDetailActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.dd.medication.about.ui.AboutDetailActivity"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+
+        <!-- 注册服务 -->
+        <service android:name="com.dd.medication.service.MedicationToastService" >
+        </service>
+
+        <receiver android:name="com.dd.medication.service.AlarmReceiver" >
+        </receiver>
+        <receiver android:name="com.dd.medication.service.BootBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+        <!-- 腾讯第三方配置 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104894612" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+
+</manifest>

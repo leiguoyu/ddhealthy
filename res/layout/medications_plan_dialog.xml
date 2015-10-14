@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:layout_marginLeft="20dip"
+        android:textColor="@color/black_overlay"
+        android:textSize="18sp"
+        android:text="本时段用药" />
+
+    <ListView
+        android:id="@+id/medications_plan_dialog_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip"
+        android:cacheColorHint="@null"
+        android:childDivider="@drawable/child_bg"
+        android:childIndicatorLeft="0dp"
+        android:divider="@color/Grey"
+        android:dividerHeight="1dp"
+        android:groupIndicator="@null"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbars="none" >
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_41BC6C"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <!--
+        android:paddingBottom="10dip"
+    android:paddingTop="10dip"
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:gravity="center_vertical" >
+
+        <!--
+              android:paddingLeft="20dip"
+        android:paddingRight="20dip"
+        -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:layout_weight="0.9"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:text="星期"
+                android:textColor="@color/black_overlay"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/time_line_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:text="30"
+                android:textColor="@color/black_overlay" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="5dip"
+            android:layout_weight="0.3"
+            android:paddingTop="5dip" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/medicine_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/time_line_yaowan_icon" />
+
+                <GridLayout
+                    android:id="@+id/time_line_chaild_medicine_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/medicine_button"
+                    android:animateLayoutChanges="true"
+                    android:columnCount="1" >
+                </GridLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip" >
+
+                <ImageView
+                    android:id="@+id/health_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/time_line_health_rec_icon" />
+
+                <GridLayout
+                    android:id="@+id/time_line_chaild_health_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/health_button"
+                    android:animateLayoutChanges="true"
+                    android:columnCount="1" >
+                </GridLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

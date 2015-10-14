@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/top_layout" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/top_layout_title"
+            android:text="条形码扫描" />
+
+        <TextView
+            android:id="@+id/no_medicine_back"
+            style="@style/top_layout_back" />
+
+        <ImageView
+            android:id="@+id/textView3"
+            style="@style/top_layout_more"
+            android:background="@drawable/more"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/seacher_medicine_fail_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="抱歉，该药品的条形码不存在，请尝试手动输入药品名称完成搜索用药"
+            android:textColor="@color/black_overlay" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/no_medicine_found_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip"
+        android:background="@drawable/login_but_bg"
+        android:text="我要按药品名称搜索"
+        android:textColor="@drawable/login_but_color" />
+
+</LinearLayout>

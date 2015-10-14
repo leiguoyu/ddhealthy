@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EBEBEB"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/top_layout" >
+
+        <RadioButton
+            android:id="@+id/medicine_setting_save_but"
+            style="@style/top_layout_more"
+            android:button="@null"
+            android:text="保存" />
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/top_layout_title"
+            android:text="添加药品" />
+
+        <TextView
+            android:id="@+id/add_medicine_toast_back"
+            style="@style/top_layout_back" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="15dip"
+            android:background="@color/color_EBEBEB"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+
+                <RadioButton
+                    android:id="@+id/medicine_name_setting_but_visble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@null"
+                    android:drawableRight="@drawable/visiable_icon"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="8dip"
+                    android:text="药物名称"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/medicine_name_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_bg"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:hint="输入有效成分或商品名称"
+                android:inputType="textPersonName"
+                android:padding="10dip"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black_overlay"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="@color/white" >
+
+                <RadioButton
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:button="@null"
+                    android:drawableRight="@drawable/visiable_down_icon" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="8dip"
+                    android:text="提醒次数"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/visiable_down_icon" />
+
+                <Spinner
+                    android:id="@+id/medicine_toast_txcs_spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:padding="10dip"
+                    android:scrollbars="none" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/medicine_toast_txcs_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@color/white" >
+            </ListView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="@color/white" >
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/visiable_down_icon" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="8dip"
+                    android:text="服药安排"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dip"
+                    android:text="开始日期"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/medicine_toast_start_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dip"
+                    android:text="2015年8月18日"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/textView81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dip"
+                    android:text="持续时间"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/medicine_cxsj_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:hint="请输入持续天数"
+                    android:padding="8dip"
+                    android:textColor="@color/black_overlay"
+                    android:textColorHint="@color/grey"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dip"
+                    android:text="挑日子"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/check_date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周一"
+                    android:textColor="@color/black_overlay" />
+
+                <CheckBox
+                    android:id="@+id/check_date2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周二"
+                    android:textColor="@color/black_overlay" />
+
+                <CheckBox
+                    android:id="@+id/check_date3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周三"
+                    android:textColor="@color/black_overlay" />
+
+                <CheckBox
+                    android:id="@+id/check_date4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周四"
+                    android:textColor="@color/black_overlay" />
+
+                <CheckBox
+                    android:id="@+id/check_date5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周五"
+                    android:textColor="@color/black_overlay" />
+
+                <CheckBox
+                    android:id="@+id/check_date6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周六"
+                    android:textColor="@color/black_overlay" />
+
+                <CheckBox
+                    android:id="@+id/check_date7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周日"
+                    android:textColor="@color/black_overlay" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="@color/white" >
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/visiable_down_icon" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="8dip"
+                    android:text="用药剂量"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white"
+                android:gravity="center_horizontal" >
+
+                <Button
+                    android:id="@+id/medicine_yyjl_jian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="-"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="36sp" />
+
+                <EditText
+                    android:id="@+id/medicine_jl_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:ems="10"
+                    android:hint="请输入用药剂量"
+                    android:inputType="textPersonName"
+                    android:padding="10dip"
+                    android:textColor="@color/black_overlay"
+                    android:textColorHint="@color/grey"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+
+                <Button
+                    android:id="@+id/medicine_yyjl_jia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="+"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="36sp" />
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/medicine_toast_jx_spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dip"
+                android:background="@color/white"
+                android:drawSelectorOnTop="true"
+                android:padding="10dip"
+                android:scrollbars="none" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="@color/white" >
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/visiable_down_icon" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="8dip"
+                    android:text="吃药说明"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <RadioGroup
+                    android:id="@+id/radioGroup1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <RadioButton
+                        android:id="@+id/medicine_cysm_qian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/radio_button_bg"
+                        android:drawablePadding="5dip"
+                        android:padding="10dip"
+                        android:text="饭前"
+                        android:textColor="@color/black_overlay" />
+
+                    <RadioButton
+                        android:id="@+id/medicine_cysm_zhong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/radio_button_bg"
+                        android:drawablePadding="5dip"
+                        android:padding="10dip"
+                        android:text="饭中"
+                        android:textColor="@color/black_overlay" />
+
+                    <RadioButton
+                        android:id="@+id/medicine_cysm_hou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/radio_button_bg"
+                        android:drawablePadding="5dip"
+                        android:padding="10dip"
+                        android:text="饭后"
+                        android:textColor="@color/black_overlay" />
+
+                    <RadioButton
+                        android:id="@+id/medicine_cysm_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/radio_button_bg"
+                        android:drawablePadding="5dip"
+                        android:padding="10dip"
+                        android:text="没有餐饮说明"
+                        android:textColor="@color/black_overlay" />
+
+                    <EditText
+                        android:id="@+id/medicine_cysm_explan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dip"
+                        android:background="@drawable/edit_bg"
+                        android:cursorVisible="true"
+                        android:ems="10"
+                        android:hint="文字说明"
+                        android:inputType="textPersonName"
+                        android:padding="10dip"
+                        android:textColor="@color/black_overlay"
+                        android:textColorHint="@color/grey"
+                        android:textCursorDrawable="@drawable/color_cursor" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:background="@color/white" >
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/visiable_down_icon" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="8dip"
+                    android:text="用药对象"
+                    android:textColor="@color/color_41BC6C"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <Spinner
+                android:id="@+id/medicine_toast_yydx_spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dip"
+                android:background="@color/white"
+                android:drawSelectorOnTop="true"
+                android:padding="10dip"
+                android:scrollbars="none" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

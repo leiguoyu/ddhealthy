@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/grey"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="选择历史病症"
+        android:textColor="@color/color_41BC6C"
+        android:textSize="18sp" />
+
+    <ListView
+        android:id="@+id/select_history_symptom_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip"
+        android:cacheColorHint="@null"
+        android:childDivider="@drawable/child_bg"
+        android:childIndicatorLeft="0dp"
+        android:divider="@color/Grey"
+        android:dividerHeight="1dp"
+        android:groupIndicator="@null"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbars="none" >
+    </ListView>
+
+</LinearLayout>

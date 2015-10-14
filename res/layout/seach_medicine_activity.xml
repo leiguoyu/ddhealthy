@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/top_layout" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/top_layout_title"
+            android:text="点滴健康" />
+
+        <TextView
+            android:id="@+id/drug_use_back"
+            style="@style/top_layout_back" />
+
+        <ImageView
+            android:id="@+id/textView3"
+            style="@style/top_layout_more"
+            android:background="@drawable/more"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip" >
+
+        <EditText
+            android:id="@+id/seach_medicine_ypmc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dip"
+            android:background="@drawable/login_but_icon"
+            android:ems="10"
+            android:hint="输入药品名称"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:paddingLeft="15dip"
+            android:textColor="@color/black_overlay" >
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/seach_medicine_search_but"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/seach_medicine_ypmc"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/search_icon" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/seach_medicine_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip"
+        android:textColor="@color/black_overlay"
+        android:textSize="18sp" />
+
+    <com.dd.medication.view.MyListViewPullDownAndUp
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip"
+        android:cacheColorHint="#00000000" />
+
+    <LinearLayout
+        android:id="@+id/seach_medicine_toast_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/seach_medicine_toast_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="哎呀，搜索不到该药品\n请确保输入了正确的药品名称\n你可以手动设置药物提醒"
+            android:textColor="@color/black_overlay"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/seach_medicine_toast_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="40dip"
+            android:background="@color/color_41BC6C"
+            android:padding="8dip"
+            android:text="我要手动设置用药"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

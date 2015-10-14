@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/body_chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dip"
+        android:background="@drawable/body_chart_man_icon" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/body_chart_man_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:padding="20dip"
+                android:text=""
+                 android:textSize="18sp"
+                android:textColor="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/body_chart_man_tunb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="        "
+                 android:textSize="18sp"
+                android:textColor="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/body_chart_man_xb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/body_chart_man_tb"
+                android:layout_below="@+id/body_chart_man_tb"
+                android:layout_marginTop="35dp"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
+                android:paddingTop="10dip"
+                android:paddingBottom="10dip"
+                android:text=""
+                 android:textSize="18sp"
+                android:textColor="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/body_chart_man_fb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/body_chart_man_tunb"
+                android:layout_alignLeft="@+id/body_chart_man_tunb"
+                android:layout_marginLeft="-15dip"
+                android:layout_marginBottom="35dp"
+                android:padding="20dip"
+                android:text=""
+                android:textSize="18sp"
+                android:textColor="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/body_chart_man_ws"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/body_chart_man_tb"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:text=""
+                 android:textSize="18sp"
+                 android:visibility="invisible"
+                android:textColor="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/body_chart_man_xz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/body_chart_man_tunb"
+                android:layout_marginTop="20dp"
+                android:layout_toLeftOf="@+id/body_chart_man_tunb"
+                android:text="        "
+                android:paddingTop="50dip"
+                android:paddingBottom="50dip"
+                android:paddingLeft="20dip"
+                 android:textSize="18sp"
+                android:textColor="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/body_chart_man_sz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/body_chart_man_tunb"
+                android:layout_below="@+id/body_chart_man_tb"
+                android:layout_toLeftOf="@+id/body_chart_man_xz"
+                android:text="        "
+                android:paddingRight="20dip"
+                android:paddingLeft="20dip"
+                android:textColor="@color/black_overlay"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/body_chart_man_xz1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/body_chart_man_xz"
+                android:layout_marginTop="22dp"
+                android:layout_toRightOf="@+id/body_chart_man_tunb"
+                android:paddingBottom="50dip"
+                android:paddingTop="50dip"
+                android:paddingLeft="20dip"
+                android:text="        "
+                android:textColor="@color/black_overlay"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/body_chart_man_sz1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/body_chart_man_tunb"
+                android:layout_alignRight="@+id/body_chart_man_ws"
+                android:layout_below="@+id/body_chart_man_tb"
+                android:paddingRight="20dip"
+                android:paddingLeft="20dip"
+                android:text="        "
+                android:textColor="@color/black_overlay"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

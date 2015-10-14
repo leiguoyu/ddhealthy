@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/top_layout" >
+
+        <TextView
+            style="@style/top_layout_title"
+            android:text="保健品详情" />
+
+        <TextView
+            android:id="@+id/health_detail_back"
+            style="@style/top_layout_back"
+            android:background="@drawable/back" />
+
+        <ImageView
+            style="@style/top_layout_more"
+            android:background="@drawable/more"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="【商品名称 】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【企业名称 】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@color/color_EBEBEB" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【国产或进口】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_domesticOrImport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【生产国（地区）】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_scgdq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【保健功能】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_bjgn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【功效成分/标志性成份含量】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_gxcfbzxcfhl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【主要原料】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_zyyl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【适宜人群】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_syrq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【不适宜人群】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_bsyrq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【食用方法及食用量】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_syffjsyl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【产品规格】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_cpgg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【保质期】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_bzq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【贮藏方法】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_zcff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【注意事项】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_zysx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【服用时机】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/health_detail_usingTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/health_detail_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/login_but_bg"
+                    android:text="用药"
+                    android:textColor="@drawable/login_but_color" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/medication_plan_yxtbg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tixing_bg" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/tixing_zhongxin_icon"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/medication_plan_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="07:20"
+                android:textColor="@color/black_overlay"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="10dip"
+                android:text="下次用药"
+                android:textColor="@color/black_overlay"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/medication_plan_next_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:10"
+                android:textColor="@color/black_overlay"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/pill_icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/linearLayout1"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/pill"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/pill_icon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/pill_icon1"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@+id/pill_icon1"
+            android:background="@drawable/pill"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/pill_icon3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/linearLayout1"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@+id/linearLayout1"
+            android:background="@drawable/pill"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/pill_icon0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/pill_icon3"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/pill"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/pill_icon6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/pill_icon1"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/pill_fase"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/pill_icon4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout1"
+            android:layout_alignLeft="@+id/pill_icon3"
+            android:layout_marginBottom="-50dp"
+            android:background="@drawable/pill_suc"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/pill_icon5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/pill_icon2"
+            android:layout_alignTop="@+id/pill_icon6"
+            android:background="@drawable/pill_fase"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/pill_icon7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/pill_icon4"
+            android:layout_alignLeft="@+id/pill_icon0"
+            android:background="@drawable/pill_fase"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

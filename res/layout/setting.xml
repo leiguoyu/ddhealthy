@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/top_layout" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/top_layout_title"
+            android:text="点滴健康" />
+
+        <TextView
+            android:id="@+id/medications_back"
+            style="@style/top_layout_back"
+            android:background="@drawable/back"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/textView3"
+            style="@style/top_layout_more"
+            android:background="@drawable/more"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="20dip"
+        android:text="设置"
+        android:textColor="@color/color_41BC6C" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:background="@color/grey" >
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip" >
+
+        <RadioButton
+            android:id="@+id/setting_yytxsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:button="@null"
+            android:drawableLeft="@drawable/setting_txsz"
+            android:drawablePadding="18dip"
+            android:text="用药提醒设定"
+            android:textSize="18sp"
+            android:textColor="@color/black_overlay" />
+
+        <RadioButton
+            android:id="@+id/setting_healp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+            android:button="@null"
+            android:drawableLeft="@drawable/setting_share"
+            android:drawablePadding="18dip"
+            android:text="帮助我们，与他人分享点滴健康"
+            android:textSize="18sp"
+            android:textColor="@color/black_overlay" />
+
+        <RadioButton
+            android:id="@+id/setting_sysn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+            android:button="@null"
+            android:drawableLeft="@drawable/setting_sysn"
+            android:drawablePadding="18dip"
+            android:text="软件更新"
+            android:textSize="18sp"
+            android:textColor="@color/black_overlay" />
+
+        <RadioButton
+            android:id="@+id/setting_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+            android:button="@null"
+            android:drawableLeft="@drawable/setting_healp"
+            android:drawablePadding="18dip"
+            android:text="关于我们"
+            android:textSize="18sp"
+            android:textColor="@color/black_overlay" />
+    </RadioGroup>
+
+</LinearLayout>

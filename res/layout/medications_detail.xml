@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/medications_detail_title"
+        style="@style/top_layout" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/top_layout_title"
+            android:text="药品详情" />
+
+        <TextView
+            android:id="@+id/medications_detail_back"
+            style="@style/top_layout_back"
+            android:background="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/textView3"
+            style="@style/top_layout_more"
+            android:background="@drawable/more"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/medications_detail_title"
+        android:layout_above="@+id/medications_detail_setting" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="【商品名称 】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【企业名称 】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@color/color_EBEBEB" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【规格】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_specification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【剂型】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_dosage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【剂型类别】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_dosageCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【成分】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_ingredient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【主治功能】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_functions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【适应症】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_indication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【用法用量】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_theusage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【有效期】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_validity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【服用时机】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_usingTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【不良反应】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_reactions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【禁忌】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_taboo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【注意事项】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="【贮藏】"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/medications_detail_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text=""
+                    android:textColor="@color/Grey"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/medications_detail_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/login_but_bg"
+        android:text="用药"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:textColor="@drawable/login_but_color" />
+
+</RelativeLayout>

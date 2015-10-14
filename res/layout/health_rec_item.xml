@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/health_rec_item_symptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dip"
+        android:text="TextView"
+        android:textColor="@color/black_overlay"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/health_rec_item_datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/health_rec_item_symptom"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dip"
+        android:text="TextView"
+        android:textColor="@color/black_overlay"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/health_rec_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/health_rec_item_datetime"
+        android:layout_below="@+id/health_rec_item_datetime"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_41BC6C"
+        android:textSize="16sp" 
+        android:text="删除" />
+
+    <TextView
+        android:id="@+id/health_rec_item_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/health_rec_item_delete"
+        android:layout_alignBottom="@+id/health_rec_item_delete"
+        android:layout_toLeftOf="@+id/health_rec_item_delete"
+        android:text="编辑 "
+        android:layout_marginRight="20dip"
+        android:textColor="@color/color_41BC6C"
+        android:textSize="16sp" />
+
+</RelativeLayout>

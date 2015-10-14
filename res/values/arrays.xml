@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <!-- Used in View/Spinner1.java -->
+    <string-array name="selected_yydx">
+        <item>本人</item>
+        <item>爸爸</item>
+        <item>妈妈</item>
+        <item>女儿</item>
+        <item>儿子</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="selected_jx">
+        <item>药片</item>
+        <item>副本</item>
+        <item>毫升</item>
+        <item>gr</item>
+        <item>毫克</item>
+        <item>滴</item>
+        <item>片</item>
+        <item>puffs</item>
+        <item>单元</item>
+        <item>药勺</item>
+        <item>汤勺</item>
+        <item>贴剂</item>
+        <item>毫克</item>
+        <item>国际单位</item>
+        <item>毫当量</item>
+    </string-array>
+    <string-array name="selected_txcs">
+        <item>一日1次</item>
+        <item>一日2次</item>
+        <item>一日3次</item>
+        <item>一日4次</item>
+        <item>一日5次</item>
+        <item>一日6次</item>
+        <item>一日7次</item>
+        <item>一日8次</item>
+        <item>一日9次</item>
+        <item>一日10次</item>
+        <item>一日11次</item>
+        <item>一日12次</item>
+    </string-array>
+    <string-array name="remind_time0">
+        <item>08:00</item>
+    </string-array>
+    <string-array name="remind_time1">
+        <item>08:00</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time2">
+        <item>08:00</item>
+        <item>14:00</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time3">
+        <item>08:00</item>
+        <item>12:00</item>
+        <item>16:00</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time4">
+        <item>08:00</item>
+        <item>11:00</item>
+        <item>14:00</item>
+        <item>17:00</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time5">
+        <item>08:00</item>
+        <item>10:30</item>
+        <item>13:00</item>
+        <item>15:00</item>
+        <item>18:30</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time6">
+        <item>08:00</item>
+        <item>10:00</item>
+        <item>12:00</item>
+        <item>14:00</item>
+        <item>16:00</item>
+        <item>18:00</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time7">
+        <item>08:00</item>
+        <item>10:30</item>
+        <item>11:30</item>
+        <item>13:00</item>
+        <item>15:00</item>
+        <item>17:30</item>
+        <item>18:30</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time8">
+        <item>08:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>13:30</item>
+        <item>14:00</item>
+        <item>16:30</item>
+        <item>17:00</item>
+        <item>19:30</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time9">
+        <item>08:00</item>
+        <item>09:30</item>
+        <item>11:30</item>
+        <item>12:00</item>
+        <item>13:30</item>
+        <item>15:30</item>
+        <item>16:00</item>
+        <item>17:30</item>
+        <item>19:30</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time10">
+        <item>08:00</item>
+        <item>09:00</item>
+        <item>10:30</item>
+        <item>12:30</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:30</item>
+        <item>18:30</item>
+        <item>19:00</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="remind_time11">
+        <item>08:00</item>
+        <item>09:00</item>
+        <item>10:00</item>
+        <item>11:30</item>
+        <item>12:30</item>
+        <item>13:30</item>
+        <item>15:30</item>
+        <item>16:30</item>
+        <item>17:30</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+    </string-array>
+    <string-array name="man_body_parts">
+        <item>头部</item>
+        <item>眼睛</item>
+        <item>鼻子</item>
+        <item>嘴</item>
+        <item>脸</item>
+        <item>脖子</item>
+        <item>胸部</item>
+        <item>手臂</item>
+        <item>腹部</item>
+        <item>臀部</item>
+        <item>骨盆</item>
+        <item>腹股沟</item>
+        <item>男生殖器</item>
+        <item>腿部</item>
+        <item>后背</item>
+        <!-- <item>外伤</item> -->
+    </string-array>
+    <string-array name="woman_body_parts">
+        <item>头部</item>
+        <item>眼睛</item>
+        <item>鼻子</item>
+        <item>嘴</item>
+        <item>脸</item>
+        <item>脖子</item>
+        <item>胸部</item>
+        <item>手臂</item>
+        <item>腹部</item>
+        <item>骨盆</item>
+        <item>腹股沟</item>
+        <item>女生殖器</item>
+        <item>腿部</item>
+        <item>后背</item>
+        <!-- <item>外伤</item> -->
+    </string-array>
+
+</resources>
