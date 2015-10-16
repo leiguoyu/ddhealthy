@@ -5,40 +5,18 @@
     android:background="@color/white"
     android:orientation="vertical" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_41BC6C"
-        android:padding="10dip" >
+    <RelativeLayout style="@style/top_layout" >
 
         <TextView
-            android:id="@+id/textView1"
             style="@style/top_layout_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="点滴健康"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:text="点滴健康" />
 
         <TextView
-            android:id="@+id/medications_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/back"
-            android:visibility="invisible" />
+            style="@style/top_layout_back"
+            android:visibility="invisible"/>
 
         <ImageView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
+            style="@style/top_layout_more"
             android:background="@drawable/more"
             android:visibility="invisible" />
     </RelativeLayout>
@@ -84,7 +62,7 @@
             android:layout_gravity="center" >
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/yaopinjilu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/about_rec_icon" />
@@ -101,7 +79,7 @@
                     android:layout_gravity="center" >
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/yaopinjilucount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
@@ -141,6 +119,7 @@
             android:layout_gravity="center" >
 
             <ImageView
+                android:id="@+id/jiankangjilu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/about_rec_icon" />
@@ -157,6 +136,7 @@
                     android:layout_gravity="center" >
 
                     <TextView
+                        android:id="@+id/jiankangRecCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="4"
@@ -193,6 +173,7 @@
             android:layout_gravity="center" >
 
             <ImageView
+                android:id="@+id/selectedRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/about_rec_icon" />
@@ -209,6 +190,7 @@
                     android:layout_gravity="center" >
 
                     <TextView
+                        android:id="@+id/selectedRecCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="4"

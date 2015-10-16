@@ -11,6 +11,10 @@ import com.dd.medication.util.Const;
 
 public class AllProductDao extends BaseDao{
 
+
+
+
+
 	/**
 	 * 插入一条数据
 	 * */
@@ -163,6 +167,29 @@ public class AllProductDao extends BaseDao{
 	 * **/
 	public boolean deleteAllUser(){
 		return deleteAll(Const.DB_NAME,Const.TB_NAME_ALL_PRODUCT);
+	}
+
+	public int getCount() {
+		int count=0;
+		Cursor cursor = null;
+		try {
+			String sql="select count(*) from "+Const.TB_NAME_ALL_PRODUCT;
+			cursor = getCursorQuery(Const.DB_NAME, sql);
+			if (cursor != null) {
+				if (cursor.moveToFirst()) {
+					count = cursor.getInt(0);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			if (cursor != null) {
+				cursor.close();
+			}
+			closeDatabase();
+		}
+		return count;
 	}
 	
 	

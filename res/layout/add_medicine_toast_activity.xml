@@ -86,7 +86,7 @@
                 android:background="@color/white" >
 
                 <RadioButton
-                    android:id="@+id/imageView2"
+                    android:id="@+id/txcs_layout_visiable"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -112,14 +112,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white" >
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/visiable_down_icon" />
+ 
 
                 <Spinner
                     android:id="@+id/medicine_toast_txcs_spinner1"
@@ -209,6 +202,7 @@
                     android:layout_height="wrap_content"
                     android:cursorVisible="true"
                     android:hint="请输入持续天数"
+                    android:inputType="number"
                     android:padding="8dip"
                     android:textColor="@color/black_overlay"
                     android:textColorHint="@color/grey"
@@ -332,7 +326,7 @@
                     android:cursorVisible="true"
                     android:ems="10"
                     android:hint="请输入用药剂量"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:padding="10dip"
                     android:textColor="@color/black_overlay"
                     android:textColorHint="@color/grey"

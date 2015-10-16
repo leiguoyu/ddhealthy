@@ -226,4 +226,27 @@ public class MyHealthyDao extends BaseDao {
 	public boolean deleteAllHealthRec() {
 		return deleteAll(Const.DB_NAME, Const.TB_NAME_MY_HEALTHY);
 	}
+
+	public int getCount() {
+		int count=0;
+		Cursor cursor = null;
+		try {
+			String sql="select count(*) from "+Const.TB_NAME_MY_HEALTHY;
+			cursor = getCursorQuery(Const.DB_NAME, sql);
+			if (cursor != null) {
+				if (cursor.moveToFirst()) {
+					count = cursor.getInt(0);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			if (cursor != null) {
+				cursor.close();
+			}
+			closeDatabase();
+		}
+		return count;
+	}
 }

@@ -21,8 +21,6 @@ public class MedicationRemindDao extends BaseDao {
 	 */
 	public boolean addMedicationRemind(MedicationRemind medicationRemindInfo) {
 		ContentValues cv = new ContentValues();
-		cv.put("medicationRemindId",
-				medicationRemindInfo.getMedicationRemindId());
 		cv.put("allProductId", medicationRemindInfo.getAllProductId());
 		cv.put("medicationObjectName",
 				medicationRemindInfo.getMedicationObjectName());
@@ -226,6 +224,77 @@ public class MedicationRemindDao extends BaseDao {
 				if (cursor.moveToFirst()) {
 					do {
 						MedicationRemind info = new MedicationRemind();
+//						info.setMedicationRemindId(cursor.getInt(cursor
+//								.getColumnIndex("medicationRemindId")));
+						info.setAllProductId(cursor.getInt(cursor
+								.getColumnIndex("allProductId")));
+						info.setMedicationObjectName(cursor.getString(cursor
+								.getColumnIndex("medicationObjectName")));
+						info.setMedicationName(cursor.getString(cursor
+								.getColumnIndex("medicationName")));
+						info.setDosageCategory(cursor.getString(cursor
+								.getColumnIndex("dosageCategory")));
+						info.setSingleDose(cursor.getString(cursor
+								.getColumnIndex("singleDose")));
+						info.setUnits(cursor.getString(cursor
+								.getColumnIndex("units")));
+						info.setAlertDay(cursor.getString(cursor
+								.getColumnIndex("alertDay")));
+						info.setAlertTime(cursor.getString(cursor
+								.getColumnIndex("alertTime")));
+						info.setStatus(cursor.getInt(cursor
+								.getColumnIndex("status")));
+						info.setCloseTime(cursor.getString(cursor
+								.getColumnIndex("closeTime")));
+						info.setLmodifyDate(cursor.getString(cursor
+								.getColumnIndex("lmodifyDate")));
+						info.setStop(cursor.getInt(cursor
+								.getColumnIndex("stop")));
+						info.setTakeMedicinetTimeExplain(cursor.getString(cursor
+								.getColumnIndex("takeMedicinetTimeExplain")));
+						info.setOtherExplain(cursor.getString(cursor
+								.getColumnIndex("otherExplain")));
+						info.setYear(cursor.getString(cursor
+								.getColumnIndex("year")));
+						info.setMonth(cursor.getString(cursor
+								.getColumnIndex("month")));
+						System.out.println("getColumnIndex(month)===="+cursor.getString(cursor
+								.getColumnIndex("month")));
+						info.setDate(cursor.getString(cursor
+								.getColumnIndex("date")));
+						info.setYearMonth(cursor.getString(cursor
+								.getColumnIndex("yearMonth")));
+						infos.add(info);
+					} while (cursor.moveToNext());
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			if (cursor != null) {
+				cursor.close();
+			}
+			closeDatabase();
+		}
+		return infos;
+	}
+
+	/**
+	 * 获取某天的用药提醒数据. 用于timeline获取每天的提醒数据
+	 * **/
+	public ArrayList<MedicationRemind> getAlertDay1(String alertDay) {
+		ArrayList<MedicationRemind> infos = new ArrayList<MedicationRemind>();
+		Cursor cursor = null;
+		try {
+			String sql = "select * from " + Const.TB_NAME_MEDICATION_REMIND
+					+ " where alertDay = '" + alertDay + "'";
+		System.out.println("sql========="+sql);
+			cursor = getCursorQuery(Const.DB_NAME, sql);
+			if (cursor != null) {
+				if (cursor.moveToFirst()) {
+					do {
+						MedicationRemind info = new MedicationRemind();
 						info.setMedicationRemindId(cursor.getInt(cursor
 								.getColumnIndex("medicationRemindId")));
 						info.setAllProductId(cursor.getInt(cursor
@@ -279,7 +348,7 @@ public class MedicationRemindDao extends BaseDao {
 		}
 		return infos;
 	}
-
+	
 	/**
 	 * 获取某天的用药提醒数据. 用于timeline获取每天的提醒数据
 	 * **/
@@ -287,8 +356,10 @@ public class MedicationRemindDao extends BaseDao {
 		ArrayList<MedicationRemind> infos = new ArrayList<MedicationRemind>();
 		Cursor cursor = null;
 		try {
+			
 			String sql = "select * from " + Const.TB_NAME_MEDICATION_REMIND
-					+ " where alertDay = '" + alertDay + "'";
+					+ " where alertDay = '" + alertDay + "' group by medicationName";
+		System.out.println("sql========="+sql);
 			cursor = getCursorQuery(Const.DB_NAME, sql);
 			if (cursor != null) {
 				if (cursor.moveToFirst()) {
@@ -523,15 +594,27 @@ public class MedicationRemindDao extends BaseDao {
 		return infos;
 	}
 
-	/**
-	 * 插入多条数据
-	 * **/
-	public void addMedicationRemind(
-			ArrayList<MedicationRemind> medicationRemindList) {
-		for (int i = 0; i < medicationRemindList.size(); i++) {
-			addMedicationRemind(medicationRemindList.get(i));
+	public int getCount() {
+		int count=0;
+		Cursor cursor = null;
+		try {
+			String sql="select count(*) from "+Const.TB_NAME_MEDICATION_REMIND;
+			cursor = getCursorQuery(Const.DB_NAME, sql);
+			if (cursor != null) {
+				if (cursor.moveToFirst()) {
+					count = cursor.getInt(0);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			if (cursor != null) {
+				cursor.close();
+			}
+			closeDatabase();
 		}
-
+		return count;
 	}
 
 }

@@ -30,14 +30,14 @@ public class RingView extends RelativeLayout{
   
       
     /** 
-     * 环的颜色 
+     * 环的颜色
      * */  
-    private final static int RingColor = Color.parseColor("#00C2C4");  
+    private final static int RingColor = Color.parseColor("#8dd4a3");  
       
     /** 
      * 进度的颜色 
      * */  
-    private final static int PecentColor = Color.GREEN;  
+    private final static int PecentColor = Color.parseColor("#41BC6C"); 
       
     /** 
      * 画笔 
@@ -48,18 +48,9 @@ public class RingView extends RelativeLayout{
      */  
     private boolean init = false;  
     /** 
-     * 背景 
-     */  
-    private static final int BackGround = Color.parseColor("#FF0000");  
-    /** 
-     * 已经完成的颜色 
-     */  
-    private static final int CircleColor = Color.YELLOW;  
-  
-    /** 
      * 完成扇形角度 
      */  
-    private static final float startAngle = 270;  
+    private static final float startAngle = 120;  
     /** 
      * 扇形中心点X轴 
      */  
@@ -111,7 +102,7 @@ public class RingView extends RelativeLayout{
         width = getMeasuredWidth();  
         height = getMeasuredHeight();  
         bigRadius = ((float) width / 2);  
-        smallRadius = (float) width / 3;  
+        smallRadius = (float) width / 4;  
         content_X = (float) width / 2;  
         content_Y = (float) height / 2;  
         init = true;  

@@ -20,7 +20,6 @@ import android.widget.TextView;
 import com.dd.medication.R;
 import com.dd.medication.base.ui.BaseActivity;
 import com.dd.medication.medicine.adapter.BodyChartAdapter;
-import com.dd.medication.medicine.adapter.SpinnerAdapter;
 import com.dd.medication.medicine.adapter.ViewPagerAdapter;
 
 /**

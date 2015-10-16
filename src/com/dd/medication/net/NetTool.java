@@ -45,10 +45,10 @@ public class NetTool {
 	 */
 	public static InputStream getContent(String urlpath){
 		try {
-			//URL url = new URL(URLEncoder.encode(urlpath));
 			URL url = new URL(urlpath);
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-			conn.setRequestMethod("GET");
+			conn.setRequestMethod("POST");
+//			conn.setRequestMethod("GET");
 			conn.setConnectTimeout(6*1000);
 			if(conn.getResponseCode() == 200){
 				Log.d("print","-------"+conn.getInputStream().available());

@@ -62,4 +62,20 @@ public class SharedPreferencesUtil {
 	}
 	
 	
+	/**
+	 * 保存设置提醒记录的id   以此id延迟  删除   取消提醒等
+	 * */
+	public static void setMedicationRec(Context contex,int requestCode){
+		//实例化SharedPreferences对象（第一步） 
+		SharedPreferences mySharedPreferences=contex. getSharedPreferences("medicationRec", 
+		Activity.MODE_PRIVATE); 
+		//实例化SharedPreferences.Editor对象（第二步） 
+		SharedPreferences.Editor editor = mySharedPreferences.edit(); 
+		//用putString的方法保存数据 
+		editor.putInt("requestCode", requestCode);
+		//提交当前数据 
+		editor.commit(); 
+	}
+	
+	
 }

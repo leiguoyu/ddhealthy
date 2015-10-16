@@ -34,7 +34,7 @@
             android:src="@drawable/pill" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/medicine_notifiction_medication_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dip"
@@ -43,7 +43,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/medicine_notifiction_alert_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dip"
@@ -51,7 +51,7 @@
         android:textColor="@color/black" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/medicine_notifiction_fysl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dip"

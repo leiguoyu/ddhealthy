@@ -1,5 +1,7 @@
 package com.dd.medication.medicine.ui;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -50,7 +52,7 @@ import com.dd.medication.util.DateUtil;
 public class AddMedicineToastActivity extends BaseActivity implements
 		OnClickListener, OnItemClickListener, OnCheckedChangeListener {
 	private RadioButton nameIvisble;
-	private EditText medicineNameEdit,cxsjEdit, yyjlEdit, cysm_explan;
+	private EditText medicineNameEdit, cxsjEdit, yyjlEdit, cysm_explan;
 	private ListView txsjList;
 	private TextView startToastTime;
 	private Handler handler = new Handler();
@@ -65,7 +67,7 @@ public class AddMedicineToastActivity extends BaseActivity implements
 	private int singleDose;// 用药剂量
 	private String takeMedicinetTimeExplain;// 服药时刻说明 饭前 * * * *
 	private int indexPosition;
-	private RemindTimesListAdapter listAdapter ;
+	private RemindTimesListAdapter listAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +89,8 @@ public class AddMedicineToastActivity extends BaseActivity implements
 		nameIvisble = (RadioButton) this
 				.findViewById(R.id.medicine_name_setting_but_visble);
 		nameIvisble.setOnClickListener(this);
+		RadioButton txcs = (RadioButton) this
+				.findViewById(R.id.txcs_layout_visiable);
 		TextView back = (TextView) this
 				.findViewById(R.id.add_medicine_toast_back);
 		back.setOnClickListener(this);
@@ -125,7 +129,7 @@ public class AddMedicineToastActivity extends BaseActivity implements
 		yyjl_jia.setOnClickListener(this);
 		// 用药剂量值
 		yyjlEdit = (EditText) this.findViewById(R.id.medicine_jl_edit);
-		
+
 		// 吃药说明
 		cysm_explan = (EditText) this.findViewById(R.id.medicine_cysm_explan);
 		// 选择吃药时间点 饭前 中 后 无
@@ -149,7 +153,7 @@ public class AddMedicineToastActivity extends BaseActivity implements
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
 				yydxStr = mItems[position];// 用药对象
-//				showToast("mItems[position]====" + yydxStr);
+				// showToast("mItems[position]====" + yydxStr);
 			}
 
 			public void onNothingSelected(AdapterView<?> parent) {
@@ -246,7 +250,8 @@ public class AddMedicineToastActivity extends BaseActivity implements
 				}
 				handler.postDelayed(new Runnable() {
 					public void run() {
-						listAdapter = new RemindTimesListAdapter(context,remind_times);
+						listAdapter = new RemindTimesListAdapter(context,
+								remind_times);
 
 						int totalHeight = 0;
 						int count = listAdapter.getCount();
@@ -287,8 +292,8 @@ public class AddMedicineToastActivity extends BaseActivity implements
 		switch (v.getId()) {
 		case R.id.medicine_yyjl_jian:
 			// 用药剂量减
-			String yyjlValue=yyjlEdit.getText().toString();
-			if(!"".equals(yyjlValue)){
+			String yyjlValue = yyjlEdit.getText().toString();
+			if (!"".equals(yyjlValue)) {
 				singleDose = Integer.valueOf(yyjlValue);
 				if (singleDose > 1) {
 					singleDose = singleDose - 1;
@@ -302,22 +307,22 @@ public class AddMedicineToastActivity extends BaseActivity implements
 				} else {
 					Toast.makeText(context, "用量不能为0或小于0的值！", Toast.LENGTH_SHORT)
 							.show();
-				}	
+				}
 			}
 			break;
 		case R.id.medicine_yyjl_jia:
 			// 用药剂量加
-			String yyjlValue1=yyjlEdit.getText().toString();
-			if(!"".equals(yyjlValue1)){
-			singleDose = Integer.valueOf(yyjlValue1);
-			singleDose = singleDose + 1;
-			handler.post(new Runnable() {
+			String yyjlValue1 = yyjlEdit.getText().toString();
+			if (!"".equals(yyjlValue1)) {
+				singleDose = Integer.valueOf(yyjlValue1);
+				singleDose = singleDose + 1;
+				handler.post(new Runnable() {
 
-				@Override
-				public void run() {
-					yyjlEdit.setText(singleDose + "");
-				}
-			});
+					@Override
+					public void run() {
+						yyjlEdit.setText(singleDose + "");
+					}
+				});
 			}
 			break;
 		case R.id.medicine_toast_start_time:
@@ -342,24 +347,19 @@ public class AddMedicineToastActivity extends BaseActivity implements
 			Intent intent2 = new Intent(context, MedicationToastService.class);
 			startService(intent2);
 
-			Intent intent = new Intent(context, AlarmReceiver.class);
-			PendingIntent sender = PendingIntent.getBroadcast(context, 0,
-					intent, 0);
-
 			String otherExplain = cysm_explan.getText().toString();
-			String yyjlValue11=yyjlEdit.getText().toString();
-			String cxsjValue=cxsjEdit.getText().toString();
-			medicineName=medicineNameEdit.getText().toString();
-			if("".equals(medicineName)){
-				Toast.makeText(context, "药品不能为空！", Toast.LENGTH_SHORT)
-				.show();
-		        return;
+			String yyjlValue11 = yyjlEdit.getText().toString();
+			String cxsjValue = cxsjEdit.getText().toString();
+			medicineName = medicineNameEdit.getText().toString();
+			if ("".equals(medicineName)) {
+				Toast.makeText(context, "药品不能为空！", Toast.LENGTH_SHORT).show();
+				return;
 			}
-			if ("".equals(cxsjValue) ) {
+			if ("".equals(cxsjValue)) {
 				Toast.makeText(context, "用药天数不能为空!", Toast.LENGTH_SHORT).show();
 				return;
 			}
-			if ("".equals(yyjlValue11) ) {
+			if ("".equals(yyjlValue11)) {
 				Toast.makeText(context, "药品用量不能为空!", Toast.LENGTH_SHORT).show();
 				return;
 			}
@@ -380,93 +380,137 @@ public class AddMedicineToastActivity extends BaseActivity implements
 			for (int i = 0; i < cxts; i++) {
 				// 保存一条或多条用药提醒记录
 				MedicationRemind medicationRemind = new MedicationRemind();
-				if(!"".equals(medicineDetailId)){
-					medicationRemind.setAllProductId(Integer
-							.valueOf(medicineDetailId));// 药品ID
+				if (null!=medicineDetailId && !"".equals(medicineDetailId)) {
+					medicationRemind.setAllProductId(Integer.valueOf(medicineDetailId));// 药品ID
 				}
 				medicationRemind.setMedicationName(medicineName);// 药品名称
 				medicationRemind.setSingleDose(singleDose + "");// 药品用量
 				medicationRemind.setUnits(yyjl_dnwei);// 药品单位
-				// 吃药说明     饭前     后
+				// 吃药说明 饭前 后
 				medicationRemind.setTakeMedicinetTimeExplain(takeMedicinetTimeExplain);
 				medicationRemind.setOtherExplain(otherExplain);// 其他说明
 				medicationRemind.setMedicationObjectName(yydxStr);// 用药对象
 				medicationRemind.setStatus(0);// 服用状态
 				medicationRemind.setCloseTime("");// 实际服用时间
-				Date currentDate;
 				try {
-					String str11=startToastTime.getText().toString();
-					currentDate = DateUtil.ConverToDate(str11);
+					String str11 = startToastTime.getText().toString();
+					Date currentDate = DateUtil.ConverToDate(str11);
 					Date indexDate = DateUtil.getDateBeforeOrAfter(currentDate,i);
-					// 用药日期 选中的当前日期   和持续的日期时间
-					medicationRemind.setAlertDay(DateUtil.getIndexYearMonthDate(indexDate));
+					// 用药日期 选中的当前日期 和持续的日期时间
+					String currentIndex=DateUtil
+							.getIndexYearMonthDate(indexDate);
+					medicationRemind.setAlertDay(currentIndex);
+//					//这里的年月日需要字符串截取
+					String indexDateTime=DateUtil.getIndexYearMonthDate1(indexDate);
+					String indexTiem[] = indexDateTime.split("-");
+					medicationRemind.setYear(indexTiem[0]);
+					System.out.println("indexTiem[1]===###########===="+indexTiem[1]);
+					medicationRemind.setMonth(indexTiem[1]);
+					medicationRemind.setDate(indexTiem[2]);
+					medicationRemind.setYearMonth(indexTiem[0]+"年"+indexTiem[1]+"月");
 					for (int j = 0; j < remind_times.length; j++) {
-						Calendar c = Calendar.getInstance();
-						String year = String.valueOf(c.get(Calendar.YEAR));
-						String month = String.valueOf(c.get(Calendar.MONTH));
-						String day = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
-						medicationRemind.setYear(year);
-						medicationRemind.setMonth(month);
-						medicationRemind.setDate(day);
-						medicationRemind.setYearMonth(DateUtil.getYearMonth());
 						// medicationRemind.setAlertTime(DateUtil.getHourMinute());//一日内用药时间
-						// 可能会有多个时间    一日内用药时间    可能会有多个时间
-						medicationRemind.setAlertTime(remind_times[j]);
-																	
-						medicationRemindList.add(medicationRemind);
-						String str=remind_times[j];
-						String tiem[]=str.split(":");
+						// 可能会有多个时间 一日内用药时间 可能会有多个时间
+						String str = remind_times[j];
+						System.out.println("====remind_times[j]===="+str);
+						medicationRemind.setAlertTime(str);
+						
+						new MedicationRemindDao().addMedicationRemind(medicationRemind);
+						
+						String tiem[] = str.split(":");
+						System.out.println("tiem[0]===="+tiem[0]+"======tiem[1]======"+tiem[1]);
+						
+						Calendar c = Calendar.getInstance();//这个时间需要测试是否为当天的   可能为某一天需修改
+						//有可能date转Calendar
+						
+						
+						c.setTimeInMillis(System.currentTimeMillis());
+						c.setTimeZone(TimeZone.getTimeZone("GMT+8")); // 这里时区需要设置一下，不然会有8个小时的时间差
+						c.set(Calendar.HOUR_OF_DAY, Integer.valueOf(tiem[0]));
+						c.set(Calendar.MINUTE, Integer.valueOf(tiem[1]));
+						c.set(Calendar.SECOND, 0);
+						c.set(Calendar.MILLISECOND, 0);
+						if (c.getTimeInMillis() < System.currentTimeMillis()) {
+							c.set(Calendar.DAY_OF_YEAR,c.get(Calendar.DAY_OF_YEAR) + 1);
+						}
+						
+                        //这里获取一个随机数   
+						String requestCodeID=/*indexTiem[0]+*/indexTiem[1]+indexTiem[2]+tiem[0]+tiem[1];// 1-10的随机数
+						System.out.println("requestCodeID======"+requestCodeID);
+						int requestCode=Integer.valueOf(requestCodeID);
+						System.out.println("requestCode======"+requestCode);
+						AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+						Intent intent = new Intent(context, AlarmReceiver.class);
+						PendingIntent sender = PendingIntent.getBroadcast(context, requestCode,
+								intent, 0);
+//						AlarmManager.ELAPSED_REALTIME   //闹钟在手机睡眠状态下不可用
+//						AlarmManager.ELAPSED_REALTIME_WAKEUP  //表示闹钟在睡眠状态下会唤醒系统并执行提示功能
+//						AlarmManager.RTC  //表示闹钟在睡眠状态下不可用
+//						AlarmManager.RTC_WAKEUP  //表示闹钟在睡眠状态下会唤醒系统并执行提示功能
+//						AlarmManager.POWER_OFF_WAKEUP  //表示闹钟在手机关机状态下也能正常进行提示功能
+						am.set(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), sender);
+						
+						//设置的闹钟怕是要保存起来        进行修改或延迟     或取消   根据requestCode
 						
 						
 						
-			            long firstTime = SystemClock.elapsedRealtime();	// 开机之后到现在的运行时间(包括睡眠时间)
-			            long systemTime = System.currentTimeMillis();
+						/*System.out.println("tiem[0]===="+tiem[0]+"======tiem[1]======"+tiem[1]);
+						long firstTime = SystemClock.elapsedRealtime(); // 开机之后到现在的运行时间(包括睡眠时间)
+						long systemTime = System.currentTimeMillis();
+.
+						Calendar calendar = Calendar.getInstance();
+						calendar.setTimeInMillis(System.currentTimeMillis()+100000);
+						System.out.println("new Date().getTime()==="+new Date().getTime());
+						System.out.println("System.currentTimeMillis()===="+System.currentTimeMillis());
+						calendar.setTimeZone(TimeZone.getTimeZone("GMT+8")); // 这里时区需要设置一下，不然会有8个小时的时间差
+						calendar.set(Calendar.MINUTE, Integer.valueOf(tiem[1]));
+						calendar.set(Calendar.HOUR_OF_DAY,
+								Integer.valueOf(tiem[0]));
+						calendar.set(Calendar.SECOND, 0);
+						calendar.set(Calendar.MILLISECOND, 0);
 
-			            Calendar calendar = Calendar.getInstance();
-					 	calendar.setTimeInMillis(System.currentTimeMillis());
-					 	calendar.setTimeZone(TimeZone.getTimeZone("GMT+8")); // 这里时区需要设置一下，不然会有8个小时的时间差
-					 	calendar.set(Calendar.MINUTE, Integer.valueOf(tiem[1]));
-					 	calendar.set(Calendar.HOUR_OF_DAY, Integer.valueOf(tiem[0]));
-					 	calendar.set(Calendar.SECOND, 0);
-					 	calendar.set(Calendar.MILLISECOND, 0);
+						// 选择的每天定时时间
+						long selectTime = calendar.getTimeInMillis();
+						// 如果当前时间大于设置的时间，那么就从第二天的设定时间开始
+						if (systemTime > selectTime) {
+							Toast.makeText(context, "设置的时间小于当前时间",
+									Toast.LENGTH_SHORT).show();
+							calendar.add(Calendar.DAY_OF_MONTH, 1);
+							selectTime = calendar.getTimeInMillis();
+						}
 
-					 	// 选择的每天定时时间
-					 	long selectTime = calendar.getTimeInMillis();	
+						// 计算现在时间到设定时间的时间差
+						long time = selectTime - systemTime;
+						firstTime += time;
 
-					 	// 如果当前时间大于设置的时间，那么就从第二天的设定时间开始
-					 	if(systemTime > selectTime) {
-					 		Toast.makeText(context, "设置的时间小于当前时间", Toast.LENGTH_SHORT).show();
-					 		calendar.add(Calendar.DAY_OF_MONTH, 1);
-					 		selectTime = calendar.getTimeInMillis();
-					 	}
+						// // 进行闹铃注册
+						// // （1）set(int type，long startTime，PendingIntent pi)；
+						// //
+						// 该方法用于设置一次性闹钟，第一个参数表示闹钟类型，第二个参数表示闹钟执行时间，第三个参数表示闹钟响应动作。
+						// // （2）setRepeating(int type，long
+						// startTime，longintervalTime，PendingIntent pi)；
+						// // 该方法用于设置重复闹钟，第一个参数表示闹钟类型，第二个参数表示闹钟首次执行时间
+						// // ，第三个参数表示闹钟两次执行的间隔时间，第三个参数表示闹钟响应动作。
+						// // （3）setInexactRepeating（int type，long
+						// startTime，long ，PendingIntent pi）；
+						// // 该方法也用于设置重复闹钟，与第二个方法相似，不过其两个闹钟执行的间隔时间不是固定的而已。
+						AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
+						// manager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,firstTime,
+						// 10*1000, sender);
+						 manager.set(AlarmManager.RTC_WAKEUP, firstTime, sender);
+//						manager.setRepeating(AlarmManager.RTC_WAKEUP,
+//								firstTime, 10 * 1000, sender);
 
-					 	// 计算现在时间到设定时间的时间差
-					 	long time = selectTime - systemTime;
-				 		firstTime += time;
-
-//						// 进行闹铃注册
-//						// （1）set(int type，long startTime，PendingIntent pi)；
-//						// 该方法用于设置一次性闹钟，第一个参数表示闹钟类型，第二个参数表示闹钟执行时间，第三个参数表示闹钟响应动作。
-//						// （2）setRepeating(int type，long startTime，longintervalTime，PendingIntent pi)；
-//						// 该方法用于设置重复闹钟，第一个参数表示闹钟类型，第二个参数表示闹钟首次执行时间
-//						// ，第三个参数表示闹钟两次执行的间隔时间，第三个参数表示闹钟响应动作。
-//						// （3）setInexactRepeating（int type，long startTime，long       ，PendingIntent pi）；
-//						// 该方法也用于设置重复闹钟，与第二个方法相似，不过其两个闹钟执行的间隔时间不是固定的而已。
-			            AlarmManager manager = (AlarmManager)getSystemService(ALARM_SERVICE);
-//			            manager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,firstTime, 10*1000, sender);
-//						manager.set(AlarmManager.RTC_WAKEUP, firstTime, sender);
-			            manager.setRepeating(AlarmManager.RTC_WAKEUP, firstTime, 10*1000, sender);
-						
-						System.out.println("=======firstTime========"+firstTime);
-				
+						System.out.println("=======firstTime========"
+								+ firstTime);
+*/
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.out.println("这里抛异常了！！！！！！！");
 				}
 			}
-			new MedicationRemindDao().addMedicationRemind(medicationRemindList);
-
+			
 			Toast.makeText(context, "用药提醒设置成功! ", Toast.LENGTH_LONG).show();
 
 			break;
@@ -481,36 +525,39 @@ public class AddMedicineToastActivity extends BaseActivity implements
 	}
 
 	private void showDateDialog() {
-		 final Calendar objTime = Calendar.getInstance();
-	        int iYear = objTime.get(Calendar.YEAR);
-	        int iMonth = objTime.get(Calendar.MONTH);
-	        int iDay = objTime.get(Calendar.DAY_OF_MONTH);
-	         
-	        new DatePickerDialog(AddMedicineToastActivity.this, DatePickerListener, iYear, iMonth, iDay).show();
+		final Calendar objTime = Calendar.getInstance();
+		int iYear = objTime.get(Calendar.YEAR);
+		int iMonth = objTime.get(Calendar.MONTH);
+		int iDay = objTime.get(Calendar.DAY_OF_MONTH);
+
+		new DatePickerDialog(AddMedicineToastActivity.this, DatePickerListener,
+				iYear, iMonth, iDay).show();
 	}
 
-	  private DatePickerDialog.OnDateSetListener DatePickerListener = new DatePickerDialog.OnDateSetListener(){
-		  
-	        @Override
-	        public void onDateSet(DatePicker view, int year, int monthOfYear,
-	                int dayOfMonth) {
-	            // 每次保存设置的日期  
-	        	 Calendar  calendar = Calendar.getInstance(); 
-	        	 calendar.set(Calendar.YEAR, year);  
-	            calendar.set(Calendar.MONTH, monthOfYear);  
-	            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);  
-	  
-	            String str = year + "年" + (monthOfYear + 1) + "月" + dayOfMonth + "日";
-	        	startToastTime.setText(str);
-//				Toast.makeText(context, "您输入的日期是：" +str,Toast.LENGTH_LONG).show();
-	        }
-	    };
-	    
+	private DatePickerDialog.OnDateSetListener DatePickerListener = new DatePickerDialog.OnDateSetListener() {
+
+		@Override
+		public void onDateSet(DatePicker view, int year, int monthOfYear,
+				int dayOfMonth) {
+			// 每次保存设置的日期
+			Calendar calendar = Calendar.getInstance();
+			calendar.set(Calendar.YEAR, year);
+			calendar.set(Calendar.MONTH, monthOfYear);
+			calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+			String str = year + "年" + (monthOfYear + 1) + "月" + dayOfMonth
+					+ "日";
+			startToastTime.setText(str);
+			// Toast.makeText(context, "您输入的日期是："
+			// +str,Toast.LENGTH_LONG).show();
+		}
+	};
+
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		// 这里是提醒次数的设置 点击需要弹出修改时间的滚轮
-		indexPosition=position;
+		indexPosition = position;
 		showDialog();
 	}
 
@@ -519,12 +566,15 @@ public class AddMedicineToastActivity extends BaseActivity implements
 				System.currentTimeMillis());
 		dialog.setOnDateTimeSetListener(new OnDateTimeSetListener() {
 			public void OnDateTimeSet(AlertDialog dialog, long date) {
-				//刷新数据  
-				String hhMM=DateUtil.getCurrentHourMinute(date);
-				remind_times[indexPosition]=hhMM;
+				// 刷新数据
+				String hhMM = DateUtil.getCurrentHourMinute(date);
+				remind_times[indexPosition] = hhMM;
 				listAdapter.notifyDataSetChanged();
-//				Toast.makeText(context, "您输入的日期是：" + DateUtil.getStringDate(date),
-//						Toast.LENGTH_LONG).show();
+				
+				
+				// Toast.makeText(context, "您输入的日期是：" +
+				// DateUtil.getStringDate(date),
+				// Toast.LENGTH_LONG).show();
 			}
 		});
 		dialog.show();
@@ -592,11 +642,10 @@ public class AddMedicineToastActivity extends BaseActivity implements
 			break;
 
 		default:
-			
+
 			break;
 		}
-		
-	}
 
+	}
 
 }

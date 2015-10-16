@@ -8,7 +8,7 @@ import java.util.Date;
 public class DateUtil {
 
 	/**
-	 * ½«³¤Ê±¼ä¸ñÊ½×Ö·û´®×ª»»ÎªÊ±¼ä yyyy-MM-dd HH:mm:ss
+	 * å°†é•¿æ—¶é—´æ ¼å¼å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ—¶é—´ yyyy-MM-dd HH:mm:ss
 	 *
 	 */
 	public static String getStringDate(Long date) {
@@ -18,25 +18,25 @@ public class DateUtil {
 		return dateString;
 	}
 
-	// °ÑÈÕÆÚ×ªÎª×Ö·û´®
+	// æŠŠæ—¥æœŸè½¬ä¸ºå­—ç¬¦ä¸²
 	public static String ConverToString(Date date) {
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		return df.format(date);
 	}
 
-	// °Ñ×Ö·û´®×ªÎªÈÕÆÚ
+	// æŠŠå­—ç¬¦ä¸²è½¬ä¸ºæ—¥æœŸ
 	public static Date ConverToDate(String strDate) throws Exception {
-		DateFormat df = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ");
+		DateFormat df = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥");
 		return df.parse(strDate);
 	}
 
 	/**
-	 * µÃµ½ÏµÍ³µ±Ç°ÈÕÆÚµÄÇ°»òÕßºó¼¸Ìì
+	 * å¾—åˆ°ç³»ç»Ÿå½“å‰æ—¥æœŸçš„å‰æˆ–è€…åå‡ å¤©
 	 *
 	 * @param iDate
-	 *            Èç¹ûÒª»ñµÃÇ°¼¸ÌìÈÕÆÚ£¬¸Ã²ÎÊıÎª¸ºÊı£» Èç¹ûÒª»ñµÃºó¼¸ÌìÈÕÆÚ£¬¸Ã²ÎÊıÎªÕıÊı
+	 *            å¦‚æœè¦è·å¾—å‰å‡ å¤©æ—¥æœŸï¼Œè¯¥å‚æ•°ä¸ºè´Ÿæ•°ï¼› å¦‚æœè¦è·å¾—åå‡ å¤©æ—¥æœŸï¼Œè¯¥å‚æ•°ä¸ºæ­£æ•°
 	 * @see java.util.Calendar#add(int, int)
-	 * @return Date ·µ»ØÏµÍ³µ±Ç°ÈÕÆÚµÄÇ°»òÕßºó¼¸Ìì
+	 * @return Date è¿”å›ç³»ç»Ÿå½“å‰æ—¥æœŸçš„å‰æˆ–è€…åå‡ å¤©
 	 */
 	public static Date getDateBeforeOrAfter(int iDate) {
 		Calendar cal = Calendar.getInstance();
@@ -45,12 +45,12 @@ public class DateUtil {
 	}
 
 	/**
-	 * µÃµ½ÈÕÆÚµÄÇ°»òÕßºó¼¸Ìì
+	 * å¾—åˆ°æ—¥æœŸçš„å‰æˆ–è€…åå‡ å¤©
 	 *
 	 * @param iDate
-	 *            Èç¹ûÒª»ñµÃÇ°¼¸ÌìÈÕÆÚ£¬¸Ã²ÎÊıÎª¸ºÊı£» Èç¹ûÒª»ñµÃºó¼¸ÌìÈÕÆÚ£¬¸Ã²ÎÊıÎªÕıÊı
+	 *            å¦‚æœè¦è·å¾—å‰å‡ å¤©æ—¥æœŸï¼Œè¯¥å‚æ•°ä¸ºè´Ÿæ•°ï¼› å¦‚æœè¦è·å¾—åå‡ å¤©æ—¥æœŸï¼Œè¯¥å‚æ•°ä¸ºæ­£æ•°
 	 * @see java.util.Calendar#add(int, int)
-	 * @return Date ·µ»Ø²ÎÊı<code>curDate</code>¶¨ÒåÈÕÆÚµÄÇ°»òÕßºó¼¸Ìì
+	 * @return Date è¿”å›å‚æ•°<code>curDate</code>å®šä¹‰æ—¥æœŸçš„å‰æˆ–è€…åå‡ å¤©
 	 */
 	public static Date getDateBeforeOrAfter(Date curDate, int iDate) {
 		Calendar cal = Calendar.getInstance();
@@ -60,11 +60,11 @@ public class DateUtil {
 	}
 
 	/**
-	 * ±È½ÏÁ½¸öÈÕÆÚÖ®¼äµÄ´óĞ¡
+	 * æ¯”è¾ƒä¸¤ä¸ªæ—¥æœŸä¹‹é—´çš„å¤§å°
 	 * 
 	 * @param d1
 	 * @param d2
-	 * @return Ç°Õß´óÓÚºóÕß·µ»Øtrue ·´Ö®false
+	 * @return å‰è€…å¤§äºåè€…è¿”å›true åä¹‹false
 	 */
 	public static boolean compareDate(Date d1, Date d2) {
 		Calendar c1 = Calendar.getInstance();
@@ -80,65 +80,89 @@ public class DateUtil {
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÄêÔÂÈÕ
+	 * è·å–ç³»ç»Ÿå½“å‰çš„å¹´æœˆæ—¥
 	 * **/
 	public static String getIndexYearMonthDate(Date curDate) {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ");
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥");
 		String str = formatter.format(curDate);
 		return str;
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÄêÔÂÈÕ
+	 * è·å–ç³»ç»Ÿå½“å‰çš„å¹´æœˆæ—¥
+	 * **/
+	public static String getIndexYearMonthDate1(Date curDate) {
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String str = formatter.format(curDate);
+		return str;
+	}
+
+	/**
+	 * è·å–ç³»ç»Ÿå½“å‰çš„å¹´æœˆæ—¥
 	 * **/
 	public static String getYearMonthDate() {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥");
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		return str;
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÔÂÈÕ
+	 * è·å–ç³»ç»Ÿå½“å‰çš„æœˆæ—¥
 	 * **/
 	public static String getMonthDate() {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
-		SimpleDateFormat formatter = new SimpleDateFormat("MMÔÂddÈÕ");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
+		SimpleDateFormat formatter = new SimpleDateFormat("MMæœˆddæ—¥");
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		return str;
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÊ±·Ö
+	 * è·å–ç³»ç»Ÿå½“å‰çš„æ—¶åˆ†
 	 * **/
 	public static String getHourMinute() {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
 		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		return str;
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÊ±·Ö
+	 * è¿™é‡Œå½“ä½œå½“å‰æé†’é—¹é’Ÿçš„id
+	 * **/
+	public static int getyyyyMMddHHmm() {
+		Calendar cal = Calendar.getInstance();
+		String year = cal.get(Calendar.YEAR)+"";//è·å–å¹´ä»½
+		String month=cal.get(Calendar.MONTH)+"";//è·å–æœˆä»½
+		String day=cal.get(Calendar.DATE)+"";//è·å–æ—¥
+		String hour=cal.get(Calendar.HOUR)+"";//å°æ—¶
+		String minute=cal.get(Calendar.MINUTE)+"";//åˆ†Â Â 
+		String str=/*year+*/month+day+hour+minute;
+		return Integer.valueOf(str);
+	}
+
+	/**
+	 * è·å–ç³»ç»Ÿå½“å‰çš„æ—¶åˆ†
 	 * **/
 	public static String getDateTime() {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ HHÊ±mm·Ö");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥ HHæ—¶mmåˆ†");
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		return str;
 	}
 
 	/**
-	 * ±È½ÏÁ½¸öÈÕÆÚÖ®¼äµÄ´óĞ¡
+	 * æ¯”è¾ƒä¸¤ä¸ªæ—¥æœŸä¹‹é—´çš„å¤§å°
 	 * 
 	 * @param d1
 	 * @param d2
-	 * @return Ç°Õß´óÓÚºóÕß·µ»Øtrue ·´Ö®false
+	 * @return å‰è€…å¤§äºåè€…è¿”å›true åä¹‹false
 	 */
 	public static boolean compareDate(String str1, String str2) {
 		java.text.DateFormat df = new java.text.SimpleDateFormat("HH:mm");
@@ -148,21 +172,21 @@ public class DateUtil {
 			c1.setTime(df.parse(str1));
 			c2.setTime(df.parse(str2));
 		} catch (java.text.ParseException e) {
-			System.err.println("¸ñÊ½²»ÕıÈ·");
+			e.printStackTrace();
 		}
 		int result = c1.compareTo(c2);
 		if (result == 0)
 			return true;
-		else if (result < 0)
-			// System.out.println("c1Ğ¡ÓÚc2");
+		else if (result < 0){
+			System.out.println("c1å°äºc2");
 			return true;
-		else
-			System.out.println("c1´óÓÚc2");
+		}else
+			System.out.println("c1å¤§äºc2");
 		return false;
 	}
 
 	public static int compareYearMonthDate(String str1, String str2) {
-		java.text.DateFormat df = new java.text.SimpleDateFormat("yyyyÄêMMÔÂddÈÕ");
+		java.text.DateFormat df = new java.text.SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥");
 		java.util.Calendar c1 = java.util.Calendar.getInstance();
 		java.util.Calendar c2 = java.util.Calendar.getInstance();
 		try {
@@ -171,47 +195,47 @@ public class DateUtil {
 
 			int result = c1.compareTo(c2);
 			if (result == 0) {
-				System.out.println("c1µÈÓÚc2");
+				System.out.println("c1ç­‰äºc2");
 				return 0;
-			}else if (result < 0) {
-				System.out.println("c1Ğ¡ÓÚc2");
+			} else if (result < 0) {
+				System.out.println("c1å°äºc2");
 				return -1;
-			}else {
-				System.out.println("c1´óÓÚc2");
+			} else {
+				System.out.println("c1å¤§äºc2");
 			}
 		} catch (java.text.ParseException e) {
-			System.err.println("¸ñÊ½²»ÕıÈ·");
+			System.err.println("æ ¼å¼ä¸æ­£ç¡®");
 		}
 		return 1;
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÊ±·Ö
+	 * è·å–ç³»ç»Ÿå½“å‰çš„æ—¶åˆ†
 	 * **/
 	public static String getCurrentHourMinute(long date) {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
 		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
-		String str = formatter.format(date);// »ñÈ¡µ±Ç°Ê±¼ä
+		String str = formatter.format(date);// è·å–å½“å‰æ—¶é—´
 		return str;
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÄêÔÂ
+	 * è·å–ç³»ç»Ÿå½“å‰çš„å¹´æœˆ
 	 * **/
 	public static String getYearMonth() {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyÄêMMÔÂ");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyå¹´MMæœˆ");
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);
 		return str;
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³µ±Ç°µÄÄêÔÂ
+	 * è·å–ç³»ç»Ÿå½“å‰çš„å¹´æœˆ
 	 * **/
 	public static String getYearMonth(Date date) {
-		// ¿ªÊ¼Ê±¼äÄ¬ÈÏÎªµ±Ç°ÏµÍ³ÈÕÆÚ
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyÄêMMÔÂ");
+		// å¼€å§‹æ—¶é—´é»˜è®¤ä¸ºå½“å‰ç³»ç»Ÿæ—¥æœŸ
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyå¹´MMæœˆ");
 		String str = formatter.format(date);
 		return str;
 	}
@@ -220,6 +244,63 @@ public class DateUtil {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		String str = formatter.format(indexDate);
 		return str;
+	}
+
+	/**
+	 * <pre>
+	 * æ ¹æ®æŒ‡å®šçš„æ—¥æœŸå­—ç¬¦ä¸²è·å–æ˜ŸæœŸå‡ 
+	 * </pre>
+	 * 
+	 * @param strDate
+	 *            æŒ‡å®šçš„æ—¥æœŸå­—ç¬¦ä¸²(yyyy-MM-dd æˆ– yyyy/MM/dd)
+	 * @return week
+	 *         æ˜ŸæœŸå‡ (MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY)
+	 */
+	public static String getWeekByDateStr(String strDate) {
+		int year = Integer.parseInt(strDate.substring(0, 4));
+		int month = Integer.parseInt(strDate.substring(5, 7));
+		int day = Integer.parseInt(strDate.substring(8, 10));
+
+		Calendar c = Calendar.getInstance();
+
+		c.set(Calendar.YEAR, year);
+		c.set(Calendar.MONTH, month - 1);
+		c.set(Calendar.DAY_OF_MONTH, day);
+
+		String week = "";
+		int weekIndex = c.get(Calendar.DAY_OF_WEEK);
+
+		switch (weekIndex) {
+		case 1:
+			// week = "SUNDAY";
+			week = "æ˜ŸæœŸæ—¥";
+			break;
+		case 2:
+			// week = "MONDAY";
+			week = "æ˜ŸæœŸä¸€";
+			break;
+		case 3:
+			// week = "TUESDAY";
+			week = "æ˜ŸæœŸäºŒ";
+			break;
+		case 4:
+			// week = "WEDNESDAY";
+			week = "æ˜ŸæœŸä¸‰";
+			break;
+		case 5:
+			// week = "THURSDAY";
+			week = "æ˜ŸæœŸå››";
+			break;
+		case 6:
+			// week = "FRIDAY";
+			week = "æ˜ŸæœŸäº”";
+			break;
+		case 7:
+			// week = "SATURDAY";
+			week = "æ˜ŸæœŸå…­";
+			break;
+		}
+		return week;
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.dd.medication.net;
 
+import java.net.URLEncoder;
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -91,8 +93,9 @@ public class DataSyncUtil {
 		String resultStr = "";
 		try {
 			// 这里密码需要MD5加密password
+			String keyword1=URLEncoder.encode(keyword , "utf-8");
 			String urlPath = WSDL + SERACH_PRODUCT + "memberId=" + memberId
-					+ "&deviceUid=" + deviceUid + "&keyword=" + keyword
+					+ "&deviceUid=" + deviceUid + "&keyword=" + keyword1
 					+ "&pageNo=" + pageNo + "&pageSize=" + pageSize
 					+ "&isFirstSearch=" + isFirstSearch;
 			Log.i("TAG", urlPath);

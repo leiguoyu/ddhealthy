@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24.0dip"
+        android:layout_marginBottom="20.0dip"
+        android:visibility="invisible"
         android:orientation="horizontal" >
 
         <ImageView
@@ -51,15 +52,13 @@
             android:src="@drawable/dot" />
     </LinearLayout>
 
-    <Button
+    <TextView
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/ll"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/switch_slider"
-        android:textColor="@color/black"
-        android:text="立即体验"
+        android:padding="40dip"
         android:visibility="gone" />
 
 </RelativeLayout>

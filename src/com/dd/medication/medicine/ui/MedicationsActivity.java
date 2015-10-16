@@ -33,6 +33,7 @@ public class MedicationsActivity extends BaseActivity {
 	// 获取数据 放入适配器
 	private MedicationRemindDao recDao = new MedicationRemindDao();
 	private MedicationsPlanViewPageAdapter vpAdapter;
+	private RadioButton lingchen,zaoshang,zhongwu,wanshang;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class MedicationsActivity extends BaseActivity {
 		if (recList.size() > 0) {
 			// 实例化ViewrecListPager适配器
 			vpAdapter = new MedicationsPlanViewPageAdapter(
-					context, recList);
+					context, recList,lingchen,zaoshang,zhongwu,wanshang);
 			// 设置监听
 			viewPager.setOnPageChangeListener(new MyOnPageChangeListener());
 			// 设置适配器数据
@@ -83,6 +84,7 @@ public class MedicationsActivity extends BaseActivity {
 			currIndex = position;
 			String month = recList.get(position).getMonth();
 			String date = recList.get(position).getDate();
+			
 			// 这里需要更换时间
 			dateText.setText(month + "月" + date + "日");
 		}
@@ -99,6 +101,11 @@ public class MedicationsActivity extends BaseActivity {
 	}
 
 	private void intView() {
+		lingchen=(RadioButton) this.findViewById(R.id.lingchen);
+		zaoshang=(RadioButton) this.findViewById(R.id.zaoshang);
+		zhongwu=(RadioButton) this.findViewById(R.id.zhongwu);
+		wanshang=(RadioButton) this.findViewById(R.id.wanshang);
+		
 		dateText = (TextView) this.findViewById(R.id.medications_date);
 		dateText.setText(DateUtil.getMonthDate() + "（今天）");
 		TextView back = (TextView) this.findViewById(R.id.medications_back);

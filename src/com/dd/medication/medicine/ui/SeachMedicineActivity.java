@@ -75,6 +75,10 @@ public class SeachMedicineActivity extends BaseActivity implements OnClickListen
 						.show();
 
 				break;
+			case 2004:
+				Toast.makeText(context, "搜索关键字不能为空！", Toast.LENGTH_SHORT)
+				.show();
+				break;
 			default:
 				break;
 			}
@@ -173,7 +177,11 @@ public class SeachMedicineActivity extends BaseActivity implements OnClickListen
 					if (DataSyncUtil.getNetStatus(context)) {// 有网络
 						String memberId = "";// 如果登陆的话有id 没有登录则为空指针
 						String deviceUid = PhoneUUID.getPhoneWYBS(context);
-						String keyword = seacherEdit.getText().toString();
+						String keyword = seacherEdit.getText().toString().trim();
+						if("".equals(keyword)){
+							mHandler.sendEmptyMessage(2004);
+							return;
+						}
 						String pageSize = "10";
 						String isFirstSearch = "1";
 						String searchType = "1";// 0扫码 1手动
@@ -245,7 +253,11 @@ public class SeachMedicineActivity extends BaseActivity implements OnClickListen
 					if (DataSyncUtil.getNetStatus(context)) {// 有网络
 						String memberId = "";// 如果登陆的话有id 没有登录则为空指针
 						String deviceUid = PhoneUUID.getPhoneWYBS(context);
-						String keyword = seacherEdit.getText().toString();
+						String keyword = seacherEdit.getText().toString().trim();
+						if("".equals(keyword)){
+							mHandler.sendEmptyMessage(2004);
+							return;
+						}
 						String pageSize = "10";
 						String isFirstSearch = "1";
 						String searchType = "1";// 0扫码 1手动
@@ -376,7 +388,11 @@ public class SeachMedicineActivity extends BaseActivity implements OnClickListen
 						  0:翻页操作或从搜索记录中进入时调用本接口   */
 						String memberId="";//如果登陆的话有id  没有登录则为空指针
 						String deviceUid=PhoneUUID.getPhoneWYBS(context);
-						String keyword=seacherEdit.getText().toString();
+						String keyword=seacherEdit.getText().toString().trim();
+						if("".equals(keyword)){
+							mHandler.sendEmptyMessage(2004);
+							return;
+						}
 						String pageSize="10";
 						String isFirstSearch="1";
 						String searchType="1";//0扫码  1手动

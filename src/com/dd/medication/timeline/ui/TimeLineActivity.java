@@ -259,6 +259,7 @@ public class TimeLineActivity extends BaseActivity implements
 				childHolder = new ChildHolder();
 				convertView = inflater.inflate(R.layout.child_status_item, null);
 
+				childHolder.dateWeek=(RadioButton) convertView.findViewById(R.id.date_week);
 				childHolder.timeDate = (RadioButton) convertView.findViewById(R.id.time_line_date);
 //				childHolder.medicineTitle = (TextView) convertView.findViewById(R.id.medicine_status_title);
 //				childHolder.medicineValue = (TextView) convertView.findViewById(R.id.medicine_status_value);
@@ -280,6 +281,8 @@ public class TimeLineActivity extends BaseActivity implements
 			String indexYearMonthDate = String.valueOf(((MedicationArrangeModel) getChild(groupPosition,childPosition)).getDay());
 			String date = ((MedicationArrangeModel) getChild(groupPosition,childPosition)).getMedicineName();
 			childHolder.timeDate.setText(date);
+			//根据年月日获取星期
+			childHolder.dateWeek.setText(DateUtil.getWeekByDateStr(indexYearMonthDate));
 //			int index=(int) (Math.random() * 4);
 //			childHolder.timeDate.setBackgroundResource(datebg[index]);//这里背景也修改哈
 			
@@ -464,6 +467,7 @@ public class TimeLineActivity extends BaseActivity implements
 
 	class ChildHolder {
 		private RadioButton timeDate;
+		private RadioButton dateWeek;
 //		public TextView medicineTitle;
 //		public TextView medicineValue;
 //		public TextView healthTitle;

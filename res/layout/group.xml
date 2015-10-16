@@ -2,8 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="15dp"
-    android:background="@color/white">
+    android:layout_marginTop="15dip"
+    android:layout_marginBottom="15dip"
+    android:paddingRight="5dip"
+    android:background="@color/color_41BC6C"
+    >
     
 <!-- android:background="@drawable/selector_group" -->
 
@@ -12,8 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
+        android:background="@color/white"
+        android:paddingRight="2dip"
+        android:paddingLeft="2dip"
+        android:paddingTop="3dip"
+        android:paddingBottom="3dip"
         android:text="2015年9月" />
 
     <ImageView

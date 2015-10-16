@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.dd.medication.R;
 import com.dd.medication.base.ui.BaseActivity;
@@ -26,11 +27,11 @@ public class GuideViewPagerActivity extends BaseActivity implements
 	private ViewPager vp;
 	private ViewPagerAdapter vpAdapter;
 	private List<View> views;
-	private Button button;
+	private TextView button;
 
 	// 引导图片资源
-	private static final int[] pics = { R.drawable.a, R.drawable.a,
-			R.drawable.a, R.drawable.a };
+	private static final int[] pics = { R.drawable.a, R.drawable.b,
+			R.drawable.c, R.drawable.d };
 
 	// 底部小店图片
 	private ImageView[] dots;
@@ -44,7 +45,7 @@ public class GuideViewPagerActivity extends BaseActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.guide_pager);
 
-		button = (Button) findViewById(R.id.button);
+		button = (TextView) findViewById(R.id.button);
 		views = new ArrayList<View>();
 
 		LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(
